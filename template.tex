@@ -1,0 +1,122 @@
+\documentclass[dvipdfmx,autodetect-engine]{jsarticle}
+
+\usepackage[dvipdfmx]{graphicx} % 画像挿入
+\usepackage{here} % 画像や表の表示位置の矯正
+
+\usepackage{tikz} % 図
+\usepackage{tikz-3dplot} % 3次元の図
+\usetikzlibrary{arrows.meta} % 矢印
+\usepackage{tcolorbox} % 枠
+\tcbuselibrary{breakable, skins, theorems} % 枠
+
+\usepackage{amssymb} % 数式
+\usepackage{amsmath} % 数式
+\usepackage{braket} % ブラケット記法
+\usepackage{physics} % 物理の数式
+\usepackage{amsthm} % 定理
+
+\usepackage{bm} % ベクトル(太字)
+\usepackage{amsfonts} % フォント
+\usepackage{mathrsfs} % 花文字
+
+\usepackage[dvipdfmx,colorlinks=true]{hyperref} % リンクを付ける
+
+\pagestyle{plain}
+ 
+\makeatletter
+
+% 表紙に表示するものを定義
+\def\@thesis{論文名}
+\def\id#1{\def\@id{#1}}
+\def\master#1{\def\@master{#1}}
+\def\department#1{\def\@department{#1}}
+
+% 表紙全体を定義
+\def\@maketitle{
+\begin{center}
+{\huge \@thesis \par}
+\vspace{10mm}
+{\LARGE\bf \@title \par}
+\vspace{20mm}
+{\Large 実験日　NNNN年NN月NN日\par}
+\vspace{10mm}
+{\Large 提出日　\today\par}
+\vspace{20mm}
+{\Large \@department \par}
+\vspace{10mm}
+{\Large \@master \par}
+\vspace{20mm}
+{\Large \hspace{14mm}氏名　\@author\par}
+\vspace{10mm}
+{\Large 共同実験者　学籍番号 ○○ ○○\par}
+{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
+%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
+%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
+\end{center}
+}
+% 自動的にコンパイルした日付になる設定なので注意
+ 
+\makeatother
+
+% 表紙に表示する内容 
+\title{実験タイトル}
+\department{○○大学○○学部○○学科}
+\master{○○課程N年}
+\author{学籍番号 ○○ ○○}
+
+\begin{document}
+
+% 表紙を表示
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\section{目的}
+目的
+
+\section{実験装置}
+\begin{itemize}
+    \item 実験装置
+\end{itemize}
+
+\section{実験手順}
+\begin{enumerate}
+    \item 実験手順
+\end{enumerate}
+
+\section{結果}
+結果
+
+\section{考察}
+考察
+
+\section{まとめ}
+まとめ
+
+\begin{thebibliography}{99} %参考文献の数以上の値を入力
+\bibitem{1} 参考文献
+\end{thebibliography}
+% \cite{1}とすることで本文中で引用できる
+
+
+
+% コピペ用
+
+% 表
+% \begin{table}[H]
+%   \centering
+%   \begin{tabular}{|c|c|}
+%   \hline
+%   左上 & 左下 \\ \hline
+%   左下 & 右下 \\ \hline
+%   \end{tabular}
+% \end{table}
+
+% 画像
+% \begin{figure}[H]
+%   \begin{center}
+%    \includegraphics[scale=1]{ファイル名}
+%   \end{center}
+% \end{figure}
+
+\end{document}
