@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
-\documentclass[dvipdfmx,autodetect-engine]{jsarticle}
-
-\usepackage[dvipdfmx]{graphicx} % 画像挿入
-\usepackage{here} % 画像や表の表示位置の矯正
-
-\usepackage{tikz} % 図
-\usepackage{tikz-3dplot} % 3次元の図
-\usetikzlibrary{arrows.meta} % 矢印
-\usepackage{tcolorbox} % 枠
-\tcbuselibrary{breakable, skins, theorems} % 枠
-
-\usepackage{amssymb} % 数式
-\usepackage{amsmath} % 数式
-\usepackage{braket} % ブラケット記法
-\usepackage{physics} % 物理の数式
-\usepackage{amsthm} % 定理
-
-\usepackage{bm} % ベクトル(太字)
-\usepackage{amsfonts} % フォント
-\usepackage{mathrsfs} % 花文字
-
-\usepackage[dvipdfmx,colorlinks=true]{hyperref} % リンクを付ける
-
-\pagestyle{plain}
- 
-\makeatletter
-
-% 表紙に表示するものを定義
-\def\@thesis{論文名}
-\def\id#1{\def\@id{#1}}
-\def\master#1{\def\@master{#1}}
-\def\department#1{\def\@department{#1}}
-
-% 表紙全体を定義
-\def\@maketitle{
-\begin{center}
-{\huge \@thesis \par}
-\vspace{10mm}
-{\LARGE\bf \@title \par}
-\vspace{20mm}
-{\Large 実験日　NNNN年NN月NN日\par}
-\vspace{10mm}
-{\Large 提出日　\today\par}
-\vspace{20mm}
-{\Large \@department \par}
-\vspace{10mm}
-{\Large \@master \par}
-\vspace{20mm}
-{\Large \hspace{14mm}氏名　\@author\par}
-\vspace{10mm}
-{\Large 共同実験者　学籍番号 ○○ ○○\par}
-{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
-%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
-%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}
-\end{center}
-}
-% 自動的にコンパイルした日付になる設定なので注意
- 
-\makeatother
-
-% 表紙に表示する内容 
-\title{実験タイトル}
-\department{○○大学○○学部○○学科}
-\master{○○課程N年}
-\author{学籍番号 ○○ ○○}
-
-\begin{document}
-
-% 表紙を表示
-\maketitle
-\thispagestyle{empty}
-\newpage
-
-\section{目的}
-目的
-
-\section{実験装置}
-\begin{itemize}
-    \item 実験装置
-\end{itemize}
-
-\section{実験手順}
-\begin{enumerate}
-    \item 実験手順
-\end{enumerate}
-
-\section{結果}
-結果
-
-\section{考察}
-考察
-
-\section{まとめ}
-まとめ
-
-\begin{thebibliography}{99} %参考文献の数以上の値を入力
-\bibitem{1} 参考文献
-\end{thebibliography}
-% \cite{1}とすることで本文中で引用できる
-
-
-
-% コピペ用
-
-% 表
-% \begin{table}[H]
-%   \centering
-%   \begin{tabular}{|c|c|}
-%   \hline
-%   左上 & 左下 \\ \hline
-%   左下 & 右下 \\ \hline
-%   \end{tabular}
-% \end{table}
-
-% 画像
-% \begin{figure}[H]
-%   \begin{center}
-%    \includegraphics[scale=1]{ファイル名}
-%   \end{center}
-% \end{figure}
-
+\documentclass[dvipdfmx,autodetect-engine]{jsarticle}<br>
+<br>
+\usepackage[dvipdfmx]{graphicx} % 画像挿入<br>
+\usepackage{here} % 画像や表の表示位置の矯正<br>
+<br>
+\usepackage{tikz} % 図<br>
+\usepackage{tikz-3dplot} % 3次元の図<br>
+\usetikzlibrary{arrows.meta} % 矢印<br>
+\usepackage{tcolorbox} % 枠<br>
+\tcbuselibrary{breakable, skins, theorems} % 枠<br>
+<br>
+\usepackage{amssymb} % 数式<br>
+\usepackage{amsmath} % 数式<br>
+\usepackage{braket} % ブラケット記法<br>
+\usepackage{physics} % 物理の数式<br>
+\usepackage{amsthm} % 定理<br>
+<br>
+\usepackage{bm} % ベクトル(太字)<br>
+\usepackage{amsfonts} % フォント<br>
+\usepackage{mathrsfs} % 花文字<br>
+<br>
+\usepackage[dvipdfmx,colorlinks=true]{hyperref} % リンクを付ける<br>
+<br>
+\pagestyle{plain}<br>
+ <br>
+\makeatletter<br>
+<br>
+% 表紙に表示するものを定義<br>
+\def\@thesis{論文名}<br>
+\def\id#1{\def\@id{#1}}<br>
+\def\master#1{\def\@master{#1}}<br>
+\def\department#1{\def\@department{#1}}<br>
+<br>
+% 表紙全体を定義<br>
+\def\@maketitle{<br>
+\begin{center}<br>
+{\huge \@thesis \par}<br>
+\vspace{10mm}<br>
+{\LARGE\bf \@title \par}<br>
+\vspace{20mm}<br>
+{\Large 実験日　NNNN年NN月NN日\par}<br>
+\vspace{10mm}<br>
+{\Large 提出日　\today\par}<br>
+\vspace{20mm}<br>
+{\Large \@department \par}<br>
+\vspace{10mm}<br>
+{\Large \@master \par}<br>
+\vspace{20mm}<br>
+{\Large \hspace{14mm}氏名　\@author\par}<br>
+\vspace{10mm}<br>
+{\Large 共同実験者　学籍番号 ○○ ○○\par}<br>
+{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}<br>
+%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}<br>
+%{\Large \hspace{24mm}　学籍番号 ○○ ○○\par}<br>
+\end{center}<br>
+}<br>
+% 自動的にコンパイルした日付になる設定なので注意<br>
+<br>
+\makeatother<br>
+<br>
+% 表紙に表示する内容<br>
+\title{実験タイトル}<br>
+\department{○○大学○○学部○○学科}<br>
+\master{○○課程N年}<br>
+\author{学籍番号 ○○ ○○}<br>
+<br>
+\begin{document}<br>
+<br>
+% 表紙を表示<br>
+\maketitle<br>
+\thispagestyle{empty}<br>
+\newpage<br>
+<br>
+\section{目的}<br>
+目的<br>
+<br>
+\section{実験装置}<br>
+\begin{itemize}<br>
+    \item 実験装置<br>
+\end{itemize}<br>
+<br>
+\section{実験手順}<br>
+\begin{enumerate}<br>
+    \item 実験手順<br>
+\end{enumerate}<br>
+<br>
+\section{結果}<br>
+結果<br>
+<br>
+\section{考察}<br>
+考察<br>
+<br>
+\section{まとめ}<br>
+まとめ<br>
+<br>
+\begin{thebibliography}{99} %参考文献の数以上の値を入力<br>
+\bibitem{1} 参考文献<br>
+\end{thebibliography}<br>
+% \cite{1}とすることで本文中で引用できる<br>
+<br>
+<br>
+<br>
+% コピペ用<br>
+<br>
+% 表<br>
+% \begin{table}[H]<br>
+%   \centering<br>
+%   \begin{tabular}{|c|c|}<br>
+%   \hline<br>
+%   左上 & 左下 \\ \hline<br>
+%   左下 & 右下 \\ \hline<br>
+%   \end{tabular}<br>
+% \end{table}<br>
+<br>
+% 画像<br>
+% \begin{figure}[H]<br>
+%   \begin{center}<br>
+%    \includegraphics[scale=1]{ファイル名}<br>
+%   \end{center}<br>
+% \end{figure}<br>
+<br>
 \end{document}
 </body>
 </html>
