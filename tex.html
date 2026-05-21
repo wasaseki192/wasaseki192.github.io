@@ -9,7 +9,7 @@
         <div class="header">
         </div>
         <div class="main">
-        <br>
+        <h1>LaTeXの環境構築方法</h1>
         <h2>オンラインでの環境構築</h2>
             <ol>
                 <li><a href="https://ja.overleaf.com">Overleaf</a>を開きます。</li>
@@ -38,9 +38,29 @@
                 <li>右下の「インストール」を押します。</li>
             </ol>
             <h4>TeX Liveのインストールがうまくいかない場合</h4>
+            <ol>
+                <li><a href="https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">TeXLive</a>のインストーラーをダウンロードし、実行します。</li>
+                <li>Windows Defenderに保護されることがありますがファイルに問題はないので、「詳細情報」を押して実行します。</li>
+                <li>"Unpack only"を選択して"Next"を押します。</li>
+                <li>"Browse"を押し、Cドライブの中に"temp_texlive"フォルダーを作り、そのフォルダーを選択します。</li>
+                <li>"Next"を押します。</li>
+                <li>"Install"を押します。</li>
+                <li>解凍が完了すると"Close"が押せるようになるので"Close"を押します。</li>
+                <li>「コマンドプロンプト」を起動します。</li>
+                <li>"mkdir C:\temp"と入力し実行します。</li>
+                <li>"set TEMP=C:\temp"と入力し実行します。</li>
+                <li>"set TMP=C:\temp"と入力し実行します。</li>
+                <li>"cd C:\temp_texlive"と入力し実行します。</li>
+                <li>"cd install"と入力し、Tabキーを押して実行します。</li>
+                <li>"install-tl-windows.bat -no-gui"と入力し実行します。</li>
+                <li>しばらくするとインストーラーが起動します。</li>
+                <li>"Enter command"に"S"と入力してEnterキーを押します。続いて"d"と入力してEnterキーを押し、"R"と入力してEnterキーを押します。</li>
+                <li>"Enter command"に"C"と入力してEnterキーを押します。続いて"p"と入力してEnterキーを押し、"x"と入力してEnterキーを押し、"F"と入力してEnterキーを押し、"R"と入力してEnterキーを押します。</li>
+                <li>"Enter command"に"I"と入力してEnterキーを押します。</li>
+            </ol>
             <h4>TeXLiveマネージャーの設定</h4>
             <ol>
-                <li>TLShell TeX Live Managerを開きます。</li>
+                <li>TLShell TeX Live Managerを起動します。</li>
                 <li>「パッケージリスト」の「状態」を「すべて」に変更し、「検索」から"latexmk"を検索します。</li>
                 <li>"latexmk"と"latexmk.win32"が下に出てくるので左側の丸を押してチェックし、画面右側の「選択項目をインストール」を押します。</li>
                 <li>終了したら「閉じる」を押し、「終了」を押します。</li>
