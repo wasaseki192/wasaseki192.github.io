@@ -128,21 +128,4 @@
 %   \end{center}
 % \end{figure}
 
-% 画像（2枚横並び）
-% \begin{figure}[h]
-% \centering
-% \begin{minipage}[b]{0.49\columnwidth}
-%     \centering
-%     \includegraphics[width=0.9\columnwidth]{a.png}
-%     \caption{}
-%     \label{fig:zu}
-% \end{minipage}
-% \begin{minipage}[b]{0.49\columnwidth}
-%     \centering
-%     \includegraphics[width=0.9\columnwidth]{b.png}
-%     \caption{}
-%     \label{fig:zu}
-% \end{minipage}
-% \end{figure}
-
 \end{document}
