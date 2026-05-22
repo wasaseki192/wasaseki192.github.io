@@ -1,0 +1,42 @@
+\documentclass[dvipdfmx,autodetect-engine]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{here} % 画像や表の表示位置の矯正
+
+\usepackage{tikz} % 図
+\usepackage{tikz-3dplot} % 3次元の図
+\usetikzlibrary{arrows.meta} % 矢印
+\usepackage{tcolorbox} % 枠
+\tcbuselibrary{breakable, skins, theorems} % 枠
+
+\usepackage{amssymb} % 数式
+\usepackage{amsmath} % 数式
+\usepackage{braket} % ブラケット記法
+\usepackage{physics} % 物理の数式
+\usepackage{amsthm} % 定理
+
+\usepackage{bm} % ベクトル(太字)
+\usepackage{amsfonts} % フォント
+\usepackage{mathrsfs} % 花文字
+
+\usepackage[colorlinks=true]{hyperref} % リンクを付ける 
+
+\title{タイトル}
+\author{名前}
+\date{\number\year 年\number\month 月\number\day 日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+%abstract
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\part{部}
+\section{章}
+\subsection{節}
+
+\end{document}
