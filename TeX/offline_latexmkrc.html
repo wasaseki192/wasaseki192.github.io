@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+# 通常の LaTeX ドキュメントのビルドコマンド
+<br>$latex = 'uplatex %O -kanji=utf8 -no-guess-input-enc -synctex=1 -interaction=nonstopmode %S';
+<br># pdfLaTeX のビルドコマンド
+<br>$pdflatex = 'pdflatex %O -synctex=1 -interaction=nonstopmode %S';
+<br># LuaLaTeX のビルドコマンド
+<br>$lualatex = 'lualatex %O -synctex=1 -interaction=nonstopmode %S';
+<br># XeLaTeX のビルドコマンド
+<br>$xelatex = 'xelatex %O -no-pdf -synctex=1 -shell-escape -interaction=nonstopmode %S';
+<br># Biber, BibTeX のビルドコマンド
+<br>$biber = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B';
+<br>$bibtex = 'upbibtex %O %B';
+<br># makeindex のビルドコマンド
+<br>$makeindex = 'upmendex %O -o %D %S';
+<br># dvipdf のビルドコマンド
+<br>$dvipdf = 'dvipdfmx %O -o %D %S';
+<br># dvipd のビルドコマンド
+<br>$dvips = 'dvips %O -z -f %S | convbkmk -u > %D';
+<br>$ps2pdf = 'ps2pdf.exe %O %S %D';
+<br>
+<br># PDF の作成方法を指定するオプション
+<br>## $pdf_mode = 0; PDF を作成しない。
+<br>## $pdf_mode = 1; $pdflatex を利用して PDF を作成。
+<br>## $pdf_mode = 2; $ps2pdf を利用して .ps ファイルから PDF を作成。
+<br>## pdf_mode = 3; $dvipdf を利用して .dvi ファイルから PDF を作成。
+<br>## $pdf_mode = 4; $lualatex を利用して .dvi ファイルから PDF を作成。
+<br>## $pdf_mode = 5; xdvipdfmx を利用して .xdv ファイルから PDF を作成。
+<br>$pdf_mode = 4;
+<br>
+<br># PDF viewer の設定
+<br>$pdf_previewer = "start %S";  # "start %S": .pdf に関連付けられた既存のソフトウェアで表示する。
+<br>## SumatraPDF: https://www.sumatrapdfreader.org/free-pdf-reader.html
+<br>## $pdf_previewer = 'SumatraPDF -reuse-instance';
+</body>
+</html>
