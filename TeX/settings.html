@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+<br>    // 日本語文書で単語移動を使うため、助詞や読点、括弧を区切り文字として指定する
+<br>    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
+<br>
+<br>    // 設定: LaTeX Workshop
+<br>
+<br>    // LaTeX Workshop ではビルド設定を「Tool」と「Recipe」という2つで考える
+<br>    //   Tool: 実行される1つのコマンド。コマンド (command) と引数 (args) で構成される
+<br>    //   Recipe: Tool の組み合わわせを定義する。Tool の組み合わせ (tools) で構成される。
+<br>    //           tools の中で利用される Tool は "latex-workshop.latex.tools" で定義されている必要がある。
+<br>    
+<br>    // latex-workshop.latex.tools: Tool の定義
+<br>    "latex-workshop.latex.tools": [
+<br>      
+<br>        // latexmk を利用した lualatex によるビルドコマンド
+<br>        {
+<br>          "name": "Latexmk (LuaLaTeX)",
+<br>          "command": "latexmk",
+<br>          "args": [
+<br>            "-f", "-gg", "-pv", "-lualatex", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
+<br>          ]
+<br>        },
+<br>        // latexmk を利用した xelatex によるビルドコマンド
+<br>        {
+<br>          "name": "Latexmk (XeLaTeX)",
+<br>          "command": "latexmk",
+<br>          "args": [
+<br>            "-f", "-gg", "-pv", "-xelatex", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
+<br>          ]
+<br>        },
+<br>        // latexmk を利用した uplatex によるビルドコマンド
+<br>        {
+<br>          "name": "Latexmk (upLaTeX)",
+<br>          "command": "latexmk",
+<br>          "args": [
+<br>            "-f", "-gg", "-pv", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
+<br>          ]
+<br>        },
+<br>        // latexmk を利用した platex によるビルドコマンド
+<br>        // 古い LaTeX のテンプレートを使いまわしている (ドキュメントクラスが jreport や jsreport ) 場合のため
+<br>        {
+<br>          "name": "Latexmk (pLaTeX)",
+<br>          "command": "latexmk",
+<br>          "args": [
+<br>            "-f", "-gg", "-pv", "-latex='platex'", "-latexoption='-kanji=utf8 -no-guess-input-env'", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
+<br>          ]
+<br>        }
+<br>    ],
+<br>
+<br>    // latex-workshop.latex.recipes: Recipe の定義
+<br>    "latex-workshop.latex.recipes": [
+<br>        // LuaLaTeX で書かれた文書のビルドレシピ
+<br>        {
+<br>          "name": "LuaLaTeX",
+<br>          "tools": [
+<br>            "Latexmk (LuaLaTeX)"
+<br>          ]
+<br>        },
+<br>        // XeLaTeX で書かれた文書のビルドレシピ
+<br>        {
+<br>          
+<br>          "name": "XeLaTeX",
+<br>          "tools": [
+<br>            "Latexmk (XeLaTeX)"
+<br>          ]
+<br>        },
+<br>        // LaTeX(upLaTeX) で書かれた文書のビルドレシピ
+<br>        {
+<br>          "name": "upLaTeX",
+<br>          "tools": [
+<br>            "Latexmk (upLaTeX)"
+<br>          ]
+<br>        },
+<br>        // LaTeX(pLaTeX) で書かれた文書のビルドレシピ
+<br>        {
+<br>          "name": "pLaTeX",
+<br>          "tools": [
+<br>            "Latexmk (pLaTeX)"
+<br>          ]
+<br>        },
+<br>    ],
+<br>
+<br>    // latex-workshop.latex.magic.args: マジックコメント付きの LaTeX ドキュメントをビルドする設定
+<br>    // '%!TEX' で始まる行はマジックコメントと呼ばれ、LaTeX のビルド時にビルドプログラムに解釈され、
+<br>    // プログラムの挙動を制御する事ができる。
+<br>    // 参考リンク: https://blog.miz-ar.info/2016/11/magic-comments-in-tex/
+<br>    "latex-workshop.latex.magic.args": [
+<br>      "-f", "-gg", "-pv", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
+<br>    ],
+<br>
+<br>    // latex-workshop.latex.clean.fileTypes: クリーンアップ時に削除されるファイルの拡張子
+<br>    // LaTeX 文書はビルド時に一時ファイルとしていくつかのファイルを生成するが、最終的に必要となるのは
+<br>    // PDF ファイルのみである場合などが多い。また、LaTeX のビルド時に失敗した場合、失敗時に生成された
+<br>    // 一時ファイルの影響で、修正後のビルドに失敗してしまう事がよくある。そのため、一時的なファイルを
+<br>    // 削除する機能 (クリーンアップ) が LaTeX Workshop には備わっている。
+<br>    "latex-workshop.latex.clean.fileTypes": [
+<br>        "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
+<br>        // for Beamer files
+<br>        "_minted*", "*.nav", "*.snm", "*.vrb",
+<br>    ],
+<br>
+<br>    // latex-workshop.latex.autoClean.run: ビルド失敗時に一時ファイルのクリーンアップを行うかどうか
+<br>    // 上記説明にもあったように、ビルド失敗時に生成された一時ファイルが悪影響を及ぼす事があるため、自動で
+<br>    // クリーンアップがかかるようにしておく。
+<br>
+<br>    "latex-workshop.latex.autoClean.run": "onBuilt",
+<br>
+<br>    // latex-workshop.view.pdf.viewer: PDF ビューアの開き方
+<br>    // VSCode 自体には PDF ファイルを閲覧する機能が備わっていないが、
+<br>    // LaTeX Workshop にはその機能が備わっている。
+<br>    // "tab" オプションを指定すると、今開いているエディタを左右に分割し、右側に生成されたPDFを表示するようにしてくれる
+<br>    // この PDF ビュアーは LaTeX のビルドによって更新されると同期して内容を更新してくれる。
+<br>    "latex-workshop.view.pdf.viewer": "tab",
+<br>
+<br>    // latex-workshop.latex.autoBuild.run: .tex ファイルの保存時に自動的にビルドを行うかどうか
+<br>    // "latex-workshop.latex.autoBuild.run": "never",
+<br>    "latex-workshop.latex.autoBuild.run": "onFileChange",
+<br>
+<br>    "[tex]": {
+<br>        // スニペット補完中にも補完を使えるようにする
+<br>        "editor.suggest.snippetsPreventQuickSuggestions": false,
+<br>        // インデント幅を2にする
+<br>        "editor.tabSize": 2
+<br>    },
+<br>
+<br>    "[latex]": {
+<br>        // スニペット補完中にも補完を使えるようにする
+<br>        "editor.suggest.snippetsPreventQuickSuggestions": false,
+<br>        // インデント幅を2にする
+<br>        "editor.tabSize": 2
+<br>    },
+<br>
+<br>    "[bibtex]": {
+<br>        // インデント幅を2にする
+<br>        "editor.tabSize": 2
+<br>    },
+<br>
+<br>
+<br>    // ---------- LaTeX Workshop ----------
+<br>
+<br>    // 使用パッケージのコマンドや環境の補完を有効にする
+<br>    "latex-workshop.intellisense.package.enabled": true,
+<br>
+<br>    // 生成ファイルを "out" ディレクトリに吐き出す
+<br>    "latex-workshop.latex.outDir": "out",
+</body>
+</html>
