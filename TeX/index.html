@@ -62,7 +62,7 @@
                 <li>"rmdir /s /q C:\temp"と入力し実行します。</li>
                 <li>"rmdir /s /q C:\temp_texlive"と入力し実行します。</li>
             </ol>
-            <h4>TeXLiveマネージャーの設定</h4>
+            <h4>TeXパッケージのインストール</h4>
             <ol>
                 <li>TLShell TeX Live Managerを起動します。</li>
                 <li>「パッケージリスト」の「状態」を「すべて」に変更し、「検索」から"latexmk"を検索します。</li>
@@ -91,6 +91,35 @@
             </ol>
             <h2>オフラインでの環境構築（Macの場合）</h2>
             <h2>オフラインでの環境構築（Ubuntuの場合）</h2>
+            <h4>TeX Liveをインストールする</h4>
+            <ol>
+                <li>端末を開き、"wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"を実行します。</li>
+                <li>"tar -zxf install-tl-unx.tar.gz"を実行して解凍します。</li>
+                <li>"cd install-tl-*"を実行します。</li>
+                <li>"sudo perl install-tl"を実行します。</li>
+                <li>"Enter command"に"S"と入力してEnterキーを押します。続いて"d"と入力してEnterキーを押し、"R"と入力してEnterキーを押します。</li>
+                <li>"Enter command"に"C"と入力してEnterキーを押します。続いて"p"と入力してEnterキーを押し、"x"と入力してEnterキーを押し、"F"と入力してEnterキーを押し、"R"と入力してEnterキーを押します。</li>
+                <li>"Enter command"に"I"と入力してEnterキーを押します。</li>
+                <li>「TeX Liveへようこそ！」と表示されたらインストール完了です。</li>
+                <li>"cd C:\"と入力し実行します。</li>
+                <li>"rmdir /s /q C:\temp"と入力し実行します。</li>
+                <li>"rmdir /s /q C:\temp_texlive"と入力し実行します。</li>
+            </ol>
+            <h4>PATHを通す</h4>
+            <ol>
+                <li>"sudo /usr/local/texlive/2026/bin/(アーキテクチャ)/tlmgr path add"を実行します。(アーキテクチャ)の部分には使用しているコンピューターのアーキテクチャ名を入れてください。</li>
+            </ol>
+            <h4>TeXパッケージのインストール</h4>
+            <ol>
+                <li>端末を開き、"sudo tlmgr update --self --all"を実行します。</li>
+                <li>"sudo tlmgr install latexmk"を実行します。</li>
+                <li>"sudo tlmgr install lualatex-math"を実行します</li>
+                <li>"sudo tlmgr path add"を実行します。</li>
+            </ol>
+            <h4>PDFビューワーのインストール</h4>
+            <ol>
+                <li>PDFビューワーとしてevinceをインストールするため、端末で"sudo apt install evince"を実行します。</li>
+            </ol>
         </div>
     </body>
 </html>
